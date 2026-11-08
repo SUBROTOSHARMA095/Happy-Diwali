@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#240b18" />
+  <meta name="description" content="Celebrate the festival of lights with a little Diwali-themed tic tac toe." />
+  <title>Happy Diwali — Festival of Lights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Happy Diwali home">
+      <span class="brand-icon">✦</span><span>दीपावली</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#meaning">The Festival</a>
+      <a href="#game">Play a Game</a>
+    </nav>
+    <a class="header-cta" href="#game">Play now <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-label="Diwali greeting">
+      <img class="hero-image" src="diwali-hero.png" alt="A festive Diwali scene with glowing diyas, a floral rangoli, golden lanterns and mandala decorations" />
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> THE FESTIVAL OF LIGHTS <span></span></p>
+        <h1>Let the light<br><em>within you</em> shine.</h1>
+        <p class="hero-subtitle">May your home glow with happiness, your heart with hope,<br class="desktop-break"> and your days with a thousand reasons to smile.</p>
+        <a class="gold-button" href="#game">Celebrate with a game <span>↓</span></a>
+      </div>
+      <div class="hero-note"><span class="note-line"></span> LIGHT • LOVE • PROSPERITY</div>
+    </section>
+
+    <section class="festival-strip" id="meaning">
+      <div class="strip-item"><span class="strip-icon">🪔</span><div><strong>Light over darkness</strong><small>A celebration of hope</small></div></div>
+      <span class="strip-divider"></span>
+      <div class="strip-item"><span class="strip-icon">🌼</span><div><strong>Love & togetherness</strong><small>Made brighter together</small></div></div>
+      <span class="strip-divider"></span>
+      <div class="strip-item"><span class="strip-icon">✨</span><div><strong>New beginnings</strong><small>May good things find you</small></div></div>
+    </section>
+
+    <section class="game-section" id="game">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> A LITTLE FESTIVE FUN <span></span></p>
+        <h2>Diwali <em>Tic Tac Toe</em></h2>
+        <p>Light up three diyas in a row before the fireworks do!</p>
+      </div>
+
+      <div class="game-layout">
+        <aside class="game-intro">
+          <div class="mini-mandala" aria-hidden="true">✺</div>
+          <p class="side-kicker">THE FESTIVE CHALLENGE</p>
+          <h3>A game of<br><em>light & luck.</em></h3>
+          <p class="side-copy">Take turns placing your symbols on the board. The first to get three in a row wins the celebration.</p>
+          <div class="rules">
+            <div><span class="rule-symbol diya-symbol">🪔</span><span><b>Diyas</b><small>Player 1</small></span></div>
+            <div><span class="rule-symbol fire-symbol">🎆</span><span><b>Fireworks</b><small>Player 2 / Computer</small></span></div>
+          </div>
+        </aside>
+
+        <div class="game-card">
+          <div class="game-toolbar">
+            <div class="mode-switch" role="group" aria-label="Game mode">
+              <button class="mode-button active" data-mode="computer" aria-pressed="true">vs Computer</button>
+              <button class="mode-button" data-mode="two" aria-pressed="false">2 Players</button>
+            </div>
+            <button class="sound-button" id="soundToggle" type="button" aria-pressed="false" title="Toggle sound effects">♪ <span>Sound off</span></button>
+          </div>
+
+          <div class="scoreboard" aria-label="Score">
+            <div class="score-player active" id="playerOne">
+              <span class="score-icon">🪔</span><span class="score-name">YOU</span><strong id="scoreX">0</strong>
+            </div>
+            <div class="score-center"><span>VS</span><small>FESTIVE MATCH</small></div>
+            <div class="score-player" id="playerTwo">
+              <span class="score-icon">🎆</span><span class="score-name" id="playerTwoName">CPU</span><strong id="scoreO">0</strong>
+            </div>
+          </div>
+
+          <div class="game-status" id="status" role="status" aria-live="polite"><span class="status-dot"></span> Your turn — place a diya!</div>
+
+          <div class="board-wrap">
+            <div class="board" id="board" role="grid" aria-label="Tic tac toe board">
+              <button class="cell" data-index="0" role="gridcell" aria-label="Row 1, column 1"></button>
+              <button class="cell" data-index="1" role="gridcell" aria-label="Row 1, column 2"></button>
+              <button class="cell" data-index="2" role="gridcell" aria-label="Row 1, column 3"></button>
+              <button class="cell" data-index="3" role="gridcell" aria-label="Row 2, column 1"></button>
+              <button class="cell" data-index="4" role="gridcell" aria-label="Row 2, column 2"></button>
+              <button class="cell" data-index="5" role="gridcell" aria-label="Row 2, column 3"></button>
+              <button class="cell" data-index="6" role="gridcell" aria-label="Row 3, column 1"></button>
+              <button class="cell" data-index="7" role="gridcell" aria-label="Row 3, column 2"></button>
+              <button class="cell" data-index="8" role="gridcell" aria-label="Row 3, column 3"></button>
+            </div>
+            <div class="board-corner corner-tl"></div><div class="board-corner corner-tr"></div>
+            <div class="board-corner corner-bl"></div><div class="board-corner corner-br"></div>
+          </div>
+
+          <div class="game-actions">
+            <button class="reset-button" id="resetRound" type="button">↻ <span>Restart round</span></button>
+            <button class="new-game-button" id="newGame" type="button">New game <span>✦</span></button>
+          </div>
+          <p class="game-footnote">A little friendly competition, wrapped in festive lights.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-ornament">✺</div>
+      <p class="eyebrow">FROM OUR LITTLE CORNER TO YOURS</p>
+      <h2>Wishing you a <em>joyful Diwali.</em></h2>
+      <p>May every diya you light bring a little more warmth into the world.</p>
+      <div class="closing-diyas" aria-hidden="true"><span>🪔</span><span>🪔</span><span>🪔</span></div>
+    </section>
+  </main>
+
+  <footer><span>✦</span> MADE WITH LIGHT & LOVE <span>✦</span></footer>
+  <div class="celebration-layer" id="celebrationLayer" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
